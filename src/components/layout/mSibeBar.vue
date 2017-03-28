@@ -1,5 +1,5 @@
 <template lang="html">
-  <Menu active-name="1-2" width="auto" :open-names="['1']">
+  <Menu active-name="1-1" width="auto" :open-names="['1']" :accordion='true'>
       <Submenu name="1">
           <template slot="title">
               <Icon type="ios-navigate"></Icon>
@@ -52,4 +52,7 @@ export default {
 </script>
 
 <style lang="css">
+a{
+  color: #666
+}
 </style>

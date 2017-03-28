@@ -3,11 +3,11 @@
     <div class="layout">
       <mNavBar></mNavBar>
         <div class="layout-content">
-            <Row>
+            <Row :gutter="16">
                 <i-col span="4">
                   <mSibeBar></mSibeBar>
                 </i-col>
-                <i-col span="20">
+                <i-col span="18">
                   <transition appear>
                     <router-view ></router-view>
                   </transition>

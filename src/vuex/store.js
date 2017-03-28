@@ -4,15 +4,13 @@ import guidance from './modules/guidance'
 
 Vue.use(Vuex)
 
-const item = []
+const store = {
+  items : [],
+}
 
-const store = new Vuex.Store({
-  state:{
-    item
-  },
+export default new Vuex.Store({
+  store,
   modules:{
     guidance
   }
 })
-
-export default store
