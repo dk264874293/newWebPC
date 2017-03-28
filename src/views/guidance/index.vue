@@ -20,10 +20,23 @@
 <script>
     import {mNavBar,mSibeBar,mFooterBar} from '@/components/layout'
     export default {
+      data(){
+        return {
+          paramsid : this.$store
+        }
+      },
       components:{
         mNavBar,
         mSibeBar,
         mFooterBar
+      },
+      methods:{
+        showStore(){
+          console.log(this.paramsid)
+        }
+      },
+      mounted:function(){
+        this.showStore()
       }
     }
 </script>

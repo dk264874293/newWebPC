@@ -5,9 +5,19 @@
               <Icon type="ios-navigate"></Icon>
               市场定位
           </template>
-          <Menu-item name="1-1">市场概览</Menu-item>
-          <Menu-item name="1-2">品类规划</Menu-item>
-          <Menu-item name="1-3">价格结构</Menu-item>
+          <router-link to="/guidance/market/navOneOne">
+            <Menu-item name="1-1">
+              市场概览
+            </Menu-item>
+          </router-link>
+          <router-link to="/guidance/market/navOneTwo">
+            <Menu-item name="1-2">
+              品类规划
+            </Menu-item>
+          </router-link>
+          <router-link to="/guidance/market/navOneThree">
+            <Menu-item name="1-3">价格结构</Menu-item>
+          </router-link>
       </Submenu>
       <Submenu name="2">
           <template slot="title">
