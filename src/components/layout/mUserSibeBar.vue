@@ -1,8 +1,8 @@
 <template lang="html">
-  <Menu active-name="1-1" width="auto" :open-names="['1','2','3']" :accordion='false'>
+  <Menu active-name="1-1" width="auto" :open-names="['1']" :accordion='false'>
       <Submenu name="1">
           <template slot="title">
-              <Icon type="android-locate"></Icon>
+              <Icon type="ios-navigate"></Icon>
               市场定位
           </template>
           <router-link to="/guidance/market/overview">
@@ -29,7 +29,7 @@
       </Submenu> -->
       <Submenu name="2">
           <template slot="title">
-              <Icon type="ios-pricetags"></Icon>
+              <Icon type="ios-analytics"></Icon>
               商品企划
           </template>
           <router-link to="/guidance/commodity/element">
@@ -44,7 +44,7 @@
       </Submenu>
       <Submenu name="3">
           <template slot="title">
-              <Icon type="arrow-graph-up-right"></Icon>
+              <Icon type="ios-analytics"></Icon>
               店铺运营
           </template>
           <router-link to="/guidance/operating/monitoring">

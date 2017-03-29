@@ -18,16 +18,29 @@
       <div class="layout-ico">
         <ul class="clearFloat">
           <li>
-            <Icon type="ios-cart"></Icon>
-            产品订购
+            <a href="javascript:;">
+              <Icon type="ios-cart"></Icon>
+              产品订购
+            </a>
           </li>
           <li>
-            <Icon type="ios-cart"></Icon>
-            帮助中心
+            <a href="javascript:;">
+              <Icon type="help-circled"></Icon>
+              帮助中心
+            </a>
           </li>
           <li>
-            <Icon type="ios-person"></Icon>
-            zsj111
+            <Dropdown>
+              <a href="javascript:;">
+                <Icon type="ios-person"></Icon>
+                zsj111
+                <Icon type="arrow-down-b"></Icon>
+              </a>
+              <Dropdown-menu slot="list">
+                  <Dropdown-item>用户信息</Dropdown-item>
+                  <Dropdown-item>退出登录</Dropdown-item>
+              </Dropdown-menu>
+            </Dropdown>
           </li>
         </ul>
       </div>
@@ -67,7 +80,7 @@ export default {
     float: right;
     margin-right: 20px;
   }
-  .layout-ico li{
+  .layout-ico>ul>li{
     float: left;
     margin-right: 20px;
     font-size: 14px;
