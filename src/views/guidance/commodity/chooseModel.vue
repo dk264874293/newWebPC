@@ -1,5 +1,5 @@
 <template lang="html">
-  <h1>3-3</h1>
+  <h1>商品选款</h1>
 </template>
 
 <script>

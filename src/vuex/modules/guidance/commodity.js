@@ -13,8 +13,8 @@ export default {
         component:lazyLoading('guidance/commodity/space')
       },
       {
-        path:'',
-        component:lazyLoading('guidance/commodity/')
+        path:'chooseModel',
+        component:lazyLoading('guidance/commodity/chooseModel')
       }
     ]
 }

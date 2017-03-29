@@ -1,6 +1,7 @@
 import lazyLoading from '../lazyLoading'
 import market from './market'
 import commodity from './commodity'
+import operating from './operating'
 
 const state = {
   item:[
@@ -9,7 +10,8 @@ const state = {
       component:lazyLoading('guidance',true),
       children:[
         market,
-        commodity
+        commodity,
+        operating
       ]
     }
   ]

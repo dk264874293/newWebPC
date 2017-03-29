@@ -1,5 +1,5 @@
 <template lang="html">
-  <h1>4-2</h1>
+  <h1>单价优化</h1>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template lang="html">
-  <h1>4-1</h1>
+  <h1>竞店监控</h1>
 </template>
 
 <script>

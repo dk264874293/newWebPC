@@ -38,15 +38,24 @@
           <router-link to="/guidance/commodity/space">
             <Menu-item name="2-2">价格空间</Menu-item>
           </router-link>
-          <Menu-item name="2-3">商品选款</Menu-item>
+          <router-link to="/guidance/commodity/chooseModel">
+            <Menu-item name="2-3">商品选款</Menu-item>
+          </router-link>
       </Submenu>
       <Submenu name="3">
           <template slot="title">
               <Icon type="ios-analytics"></Icon>
               店铺运营
           </template>
-          <Menu-item name="3-1">选项 1</Menu-item>
-          <Menu-item name="3-2">选项 2</Menu-item>
+          <router-link to="/guidance/operating/monitoring">
+            <Menu-item name="3-1">竞店监控</Menu-item>
+          </router-link>
+          <router-link to="/guidance/operating/optimize ">
+            <Menu-item name="3-2">单价优化</Menu-item>
+          </router-link>
+          <router-link to="/guidance/operating/warning">
+            <Menu-item name="3-3">销售预警</Menu-item>
+          </router-link>
       </Submenu>
   </Menu>
 </template>
