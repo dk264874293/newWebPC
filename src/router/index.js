@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import login from '../views/login.vue'
 import moduleGuidance from '../vuex/modules/guidance'
+import moduleFollow from '../vuex/modules/follow'
 
 Vue.use(Router)
 
@@ -13,6 +14,7 @@ export default new Router({
       redirect: '/guidance/market/overview'
      },
      ...generateRoutesFromMenu(moduleGuidance.state.item),
+     ...generateRoutesFromMenu(moduleFollow.state.item),
       {
         path:'/login',
         name:'login',

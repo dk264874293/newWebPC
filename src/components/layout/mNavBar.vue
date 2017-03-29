@@ -2,14 +2,18 @@
   <Menu mode="horizontal" theme="light" active-name="1">
       <div class="layout-logo"></div>
       <div class="layout-nav">
-          <Menu-item name="1">
-              <Icon type="ios-navigate"></Icon>
-              决策指导
-          </Menu-item>
-          <Menu-item name="2">
-              <Icon type="heart"></Icon>
-              我的关注
-          </Menu-item>
+          <router-link to='/'>
+            <Menu-item name="1">
+                <Icon type="ios-navigate"></Icon>
+                决策指导
+            </Menu-item>
+          </router-link>
+          <router-link to='/follow/store'>
+            <Menu-item name="2">
+                <Icon type="heart"></Icon>
+                我的关注
+            </Menu-item>
+          </router-link>
       </div>
       <div class="layout-ico">
         <ul class="clearFloat">
