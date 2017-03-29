@@ -10,7 +10,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/guidance/market/navOneOne'
+      redirect: '/guidance/market/overview'
      },
      ...generateRoutesFromMenu(moduleGuidance.state.item),
       {

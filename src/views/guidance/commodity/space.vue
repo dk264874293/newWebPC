@@ -1,5 +1,5 @@
 <template lang="html">
-  <h1>这是导航1-2</h1>
+  <h1>价格空间</h1>
 </template>
 
 <script>

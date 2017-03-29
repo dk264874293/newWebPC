@@ -5,16 +5,16 @@ export default {
     component:lazyLoading('guidance/market',true),
     children:[
       {
-        path:'navOneOne',
-        component:lazyLoading('guidance/market/navOneOne')
+        path:'overview',
+        component:lazyLoading('guidance/market/overview')
       },
       {
-        path:'navOneTwo',
-        component:lazyLoading('guidance/market/navOneTwo')
+        path:'planning',
+        component:lazyLoading('guidance/market/planning')
       },
       {
-        path:'navOneThree',
-        component:lazyLoading('guidance/market/navOneThree')
+        path:'structure',
+        component:lazyLoading('guidance/market/structure')
       }
     ]
 }

@@ -1,5 +1,5 @@
 <template lang="html">
-  <h1>3-2</h1>
+  <h1>价格结构</h1>
 </template>
 
 <script>
