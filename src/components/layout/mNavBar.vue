@@ -37,7 +37,9 @@
                 <Icon type="arrow-down-b"></Icon>
               </a>
               <Dropdown-menu slot="list">
-                  <Dropdown-item>用户信息</Dropdown-item>
+                  <router-link to='/user'>
+                    <Dropdown-item>用户信息</Dropdown-item>
+                  </router-link>
                   <Dropdown-item>退出登录</Dropdown-item>
               </Dropdown-menu>
             </Dropdown>

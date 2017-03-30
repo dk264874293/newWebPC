@@ -5,17 +5,17 @@
               <Icon type="android-locate"></Icon>
               市场定位
           </template>
-          <router-link to="/guidance/market/overview">
+          <router-link to="overview">
             <Menu-item name="1-1">
               市场概览
             </Menu-item>
           </router-link>
-          <router-link to="/guidance/market/planning">
+          <router-link to="planning">
             <Menu-item name="1-2">
               品类规划
             </Menu-item>
           </router-link>
-          <router-link to="/guidance/market/structure">
+          <router-link to="structure">
             <Menu-item name="1-3">价格结构</Menu-item>
           </router-link>
       </Submenu>
@@ -32,13 +32,13 @@
               <Icon type="ios-pricetags"></Icon>
               商品企划
           </template>
-          <router-link to="/guidance/commodity/element">
+          <router-link to="element">
             <Menu-item name="2-1">风尚元素</Menu-item>
           </router-link>
-          <router-link to="/guidance/commodity/space">
+          <router-link to="space">
             <Menu-item name="2-2">价格空间</Menu-item>
           </router-link>
-          <router-link to="/guidance/commodity/chooseModel">
+          <router-link to="chooseModel">
             <Menu-item name="2-3">商品选款</Menu-item>
           </router-link>
       </Submenu>
@@ -47,13 +47,13 @@
               <Icon type="arrow-graph-up-right"></Icon>
               店铺运营
           </template>
-          <router-link to="/guidance/operating/monitoring">
+          <router-link to="monitoring">
             <Menu-item name="3-1">竞店监控</Menu-item>
           </router-link>
-          <router-link to="/guidance/operating/optimize ">
+          <router-link to="optimize ">
             <Menu-item name="3-2">单价优化</Menu-item>
           </router-link>
-          <router-link to="/guidance/operating/warning">
+          <router-link to="warning">
             <Menu-item name="3-3">销售预警</Menu-item>
           </router-link>
       </Submenu>

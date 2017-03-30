@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import login from '../views/login.vue'
 import moduleGuidance from '../vuex/modules/guidance'
 import moduleFollow from '../vuex/modules/follow'
+import moduleUser from '../vuex/modules/user'
 
 Vue.use(Router)
 
@@ -15,6 +16,7 @@ export default new Router({
      },
      ...generateRoutesFromMenu(moduleGuidance.state.item),
      ...generateRoutesFromMenu(moduleFollow.state.item),
+     ...generateRoutesFromMenu(moduleUser.state.item),
       {
         path:'/login',
         name:'login',
