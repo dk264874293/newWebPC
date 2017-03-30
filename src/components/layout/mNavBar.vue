@@ -33,7 +33,7 @@
             <Dropdown>
               <a href="javascript:;">
                 <Icon type="ios-person"></Icon>
-                zsj111
+                {{userName}}
                 <Icon type="arrow-down-b"></Icon>
               </a>
               <Dropdown-menu slot="list">
@@ -51,11 +51,18 @@
 
 <script>
 export default {
-  name:'mNavBar',
   data(){
     return {
-
+      userName:this.$store.state.userInfo.userName
     }
+  },
+  methods:{
+    showstore(){
+      console.log(this.$store)
+    }
+  },
+  mounted:function(){
+    this.showstore()
   }
 }
 </script>

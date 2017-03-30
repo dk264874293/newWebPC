@@ -3,8 +3,8 @@
     <div class="login-content">
       <div class="layout-logo-login"></div>
       <Form ref="formInline" :model="formInline" :rules="ruleInline" id='loginForm'>
-        <Form-item prop="user">
-            <Input type="text" v-model="formInline.user" placeholder="用户名">
+        <Form-item prop="userName">
+            <Input type="text" v-model="formInline.userName" placeholder="用户名">
                 <Icon type="ios-person-outline" slot="prepend"></Icon>
             </Input>
         </Form-item>
@@ -36,8 +36,8 @@
                 <Button  size="large" type="primary" @click="handleSubmit('formInline')" long>登录</Button>
             </Col>
             <Col span="8" offset="1">
-              <router-link to='signIn'>
-                  <Button  size="large" type="Dashed" long>注册</Button>
+              <router-link to='/signIn'>
+                  <Button  size="large" type="dashed" long>注册</Button>
               </router-link>
             </Col>
           </Row>
@@ -52,12 +52,12 @@
       data () {
            return {
                formInline: {
-                   user: '',
+                   userName: '',
                    password: '',
                    code:''
                },
                ruleInline: {
-                   user: [
+                   userName: [
                        { required: true, message: '请填写用户名', trigger: 'blur' }
                    ],
                    password: [
@@ -74,7 +74,9 @@
            handleSubmit(name) {
                this.$refs[name].validate((valid) => {
                    if (valid) {
-                       this.$Message.success('提交成功!');
+                      this.$Message.success('提交成功!');
+                      this.$store.commit('RECORD_USERINFO',this.formInline)
+                      this.$router.push('/guidance/market/overview')
                    } else {
                        this.$Message.error('表单验证失败!');
                    }

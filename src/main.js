@@ -11,9 +11,20 @@ import 'iview/dist/styles/iview.css'
 
 Vue.use(iView)
 
+router.beforeEach((to, from, next) => {
+    if(to.meta.requireAuth != false && !store.state.login) {
+        next({
+            path: '/login/'
+        });
+    }
+    else{
+        next(); //判断该路由是否需要登录权限
+    }
+});
+
+
 Vue.prototype.echarts = echarts
 
-/* eslint-disable no-new */
 new Vue({
   router,
   store,

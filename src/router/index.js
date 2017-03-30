@@ -10,7 +10,7 @@ import moduleDetails from '../vuex/modules/details'
 Vue.use(Router)
 
 export default new Router({
-
+  scrollBehavior: () => ({ y: 0 }),
   routes: [
     {
       path: '/',
@@ -23,11 +23,17 @@ export default new Router({
       {
         path:'/login',
         name:'login',
+        meta: {
+          requireAuth: false,  //不需要登录
+        },
         component:lazyLoading('login')
       },
       {
         path:'/signIn',
         name:'signIn',
+        meta: {
+          requireAuth: false,  //不需要登录
+        },
         component:lazyLoading('signIn')
       }
   ]
