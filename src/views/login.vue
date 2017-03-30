@@ -2,103 +2,91 @@
   <div class="login-bg" :style="{height:windowHeight + 'px'}">
     <div class="login-content">
       <div class="layout-logo-login"></div>
-      <Form ref="formCustom" :model="formCustom" :rules="ruleCustom" :label-width="80">
-          <Form-item label="密码" prop="passwd">
-              <Input type="password" v-model="formCustom.passwd"></Input>
-          </Form-item>
-          <Form-item label="确认密码" prop="passwdCheck">
-              <Input type="password" v-model="formCustom.passwdCheck"></Input>
-          </Form-item>
-          <Form-item label="年龄" prop="age">
-              <Input type="text" v-model="formCustom.age" number></Input>
-          </Form-item>
-          <Form-item>
-              <Button type="primary" @click="handleSubmit('formCustom')">提交</Button>
-              <Button type="ghost" @click="handleReset('formCustom')" style="margin-left: 8px">重置</Button>
-          </Form-item>
-      </Form>
+      <Form ref="formInline" :model="formInline" :rules="ruleInline" id='loginForm'>
+        <Form-item prop="user">
+            <Input type="text" v-model="formInline.user" placeholder="用户名">
+                <Icon type="ios-person-outline" slot="prepend"></Icon>
+            </Input>
+        </Form-item>
+        <Form-item prop="password">
+            <Input type="password" v-model="formInline.password" placeholder="密码">
+                <Icon type="ios-locked-outline" slot="prepend"></Icon>
+            </Input>
+        </Form-item>
+        <Form-item prop="code">
+          <Row>
+              <Col span="16">
+                <Input  v-model="formInline.code"  placeholder="验证码"></Input>
+              </Col>
+              <Col span="8">
+              </Col>
+          </Row>
+
+        </Form-item>
+        <Form-item>
+          <Row>
+            <Col span='4'>
+              <a href="javascript:;">
+                忘记密码
+              </a>
+            </Col>
+          </Row>
+          <Row>
+            <Col span="15">
+                <Button  size="large" type="primary" @click="handleSubmit('formInline')" long>登录</Button>
+            </Col>
+            <Col span="8" offset="1">
+              <router-link to='signIn'>
+                  <Button  size="large" type="Dashed" long>注册</Button>
+              </router-link>
+            </Col>
+          </Row>
+
+        </Form-item>
+    </Form>
     </div>
   </div>
 </template>
 <script>
     export default {
-        data () {
-            const validatePass = (rule, value, callback) => {
-                if (value === '') {
-                    callback(new Error('请输入密码'));
-                } else {
-                    if (this.formCustom.passwdCheck !== '') {
-                        // 对第二个密码框单独验证
-                        this.$refs.formCustom.validateField('passwdCheck');
-                    }
-                    callback();
-                }
-            };
-            const validatePassCheck = (rule, value, callback) => {
-                if (value === '') {
-                    callback(new Error('请再次输入密码'));
-                } else if (value !== this.formCustom.passwd) {
-                    callback(new Error('两次输入密码不一致!'));
-                } else {
-                    callback();
-                }
-            };
-            const validateAge = (rule, value, callback) => {
-                if (!value) {
-                    return callback(new Error('年龄不能为空'));
-                }
-                // 模拟异步验证效果
-                setTimeout(() => {
-                    if (!Number.isInteger(value)) {
-                        callback(new Error('请输入数字值'));
-                    } else {
-                        if (value < 18) {
-                            callback(new Error('必须年满18岁'));
-                        } else {
-                            callback();
-                        }
-                    }
-                }, 1000);
-            };
+      data () {
+           return {
+               formInline: {
+                   user: '',
+                   password: '',
+                   code:''
+               },
+               ruleInline: {
+                   user: [
+                       { required: true, message: '请填写用户名', trigger: 'blur' }
+                   ],
+                   password: [
+                       { required: true, message: '请填写密码', trigger: 'blur' },
+                       { type: 'string', min: 6, message: '密码长度不能小于6位', trigger: 'blur' }
+                   ],
+                   code:[
+                      { required: true, message: '请填写验证码', trigger: 'blur' },
+                   ]
+               }
+           }
+       },
+       methods: {
+           handleSubmit(name) {
+               this.$refs[name].validate((valid) => {
+                   if (valid) {
+                       this.$Message.success('提交成功!');
+                   } else {
+                       this.$Message.error('表单验证失败!');
+                   }
+               })
+           }
+       },
+       computed:{
+         windowHeight(){
+           return  window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+         }
+       }
 
-            return {
-                formCustom: {
-                    passwd: '',
-                    passwdCheck: '',
-                    age: ''
-                },
-                ruleCustom: {
-                    passwd: [
-                        { validator: validatePass, trigger: 'blur' }
-                    ],
-                    passwdCheck: [
-                        { validator: validatePassCheck, trigger: 'blur' }
-                    ],
-                    age: [
-                        { validator: validateAge, trigger: 'blur' }
-                    ]
-                }
-            }
-        },
-        methods: {
-            handleSubmit (name) {
-                this.$refs[name].validate((valid) => {
-                    if (valid) {
-                        this.$Message.success('提交成功!');
-                    } else {
-                        this.$Message.error('表单验证失败!');
-                    }
-                })
-            },
-            handleReset (name) {
-                this.$refs[name].resetFields();
-            }
-        },
-        computed:{
-          windowHeight(){
-            return window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-          }
-        }
     }
 </script>
 <style media="screen">
@@ -117,11 +105,24 @@
 
   }
   .login-content{
-    width: 400px;
-    padding: 16px 30px 6px;
+    width: 380px;
+    padding: 16px 44px 6px;
     background-color: #fff;
     margin:0px auto ;
     border-radius:6px;
     box-shadow: 0px 0px 12px rgba(0,0,0,0.45)
   }
+  #loginForm .ivu-icon-ios-person-outline:before,
+  #loginForm .ivu-icon-ios-locked-outline:before{
+    font-size: 14px;
+  }
+  #loginForm .ivu-input{
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+  }
+  #loginForm .ivu-btn-large{
+    margin-top: 12px;
+  }
+
 </style>

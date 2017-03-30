@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import login from '../views/login.vue'
+import lazyLoading from '../vuex/modules/lazyLoading'
+
 import moduleGuidance from '../vuex/modules/guidance'
 import moduleFollow from '../vuex/modules/follow'
 import moduleUser from '../vuex/modules/user'
@@ -22,7 +23,12 @@ export default new Router({
       {
         path:'/login',
         name:'login',
-        component:login
+        component:lazyLoading('login')
+      },
+      {
+        path:'/signIn',
+        name:'signIn',
+        component:lazyLoading('signIn')
       }
   ]
 })
