@@ -1,6 +1,6 @@
 <template>
-  <div class="login-bg" >
-    <div class="login-content">
+  <div class="login-bg-signIn" >
+    <div class="login-content-signIn">
       <div class="layout-logo-login"></div>
       <Form ref="formSignIn" :model="formSignIn" :rules="ruleCustom" :label-width="80">
           <Form-item label="用户名" prop="userName">
@@ -134,7 +134,7 @@
     }
 </script>
 <style media="screen">
-  .login-bg{
+  .login-bg-signIn{
     background-color: #3091f2;
     width: 100%;
     padding-top: 120px;
@@ -149,7 +149,7 @@
       border-radius: 3px;
 
   }
-  .login-content{
+  .login-content-signIn{
     width: 600px;
     padding: 16px 130px 6px;
 

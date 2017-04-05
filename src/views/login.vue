@@ -1,5 +1,5 @@
 <template>
-  <div class="login-bg" :style="{height:windowHeight + 'px'}">
+  <div class="login-bg" :style="{minHeight:windowHeight + 'px'}">
     <div class="login-content">
       <div class="layout-logo-login"></div>
       <Form ref="formInline" :model="formInline" :rules="ruleInline" id='loginForm'>
@@ -96,6 +96,7 @@
     background-color: #3091f2;
     width: 100%;
     padding-top: 200px;
+    padding-bottom: 60px;
   }
   .layout-logo-login{
       width: 290px;
