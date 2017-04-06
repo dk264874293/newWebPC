@@ -1,6 +1,9 @@
 <template lang="html">
   <Menu mode="horizontal" theme="light" active-name="1">
-      <div class="layout-logo"></div>
+
+      <div class="layout-logo">
+        <!-- <span>全国服务热线：021-64876004</span> -->
+      </div>
       <div class="layout-nav">
           <router-link to='/'>
             <Menu-item name="1">
@@ -78,6 +81,11 @@ export default {
     position: relative;
     top: 15px;
     left: 20px;
+    /*margin-top: 16px;*/
+}
+.layout-logo>span{
+  position: absolute;
+  top: -16px;
 }
 .layout-nav{
   float: left;

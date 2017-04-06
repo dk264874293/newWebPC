@@ -11,7 +11,7 @@ const state = {
     token:null,
     phone:''
   },
-  login: false
+  login: true
 }
 
 export default new Vuex.Store({

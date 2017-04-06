@@ -1,4 +1,5 @@
 <template lang="html">
+      <Affix>
           <Menu :theme="'light'" active-name="1">
             <router-link to='store'>
               <Menu-item name="1">
@@ -19,6 +20,7 @@
               </Menu-item>
             </router-link>
           </Menu>
+      </Affix>
 </template>
 
 <script>
